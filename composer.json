@@ -1,0 +1,14 @@
+{
+    "name": "androzd/imagine",
+    "description": "Compressing images on the fly",
+    "authors": [
+        {
+            "name": "Andrey Drozd",
+            "email": "andrey@drozd.by"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "intervention/image": "^2.3"
+    }
+}
