@@ -16,11 +16,11 @@ class ImagineServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../config/imagine.php' => config_path('imagine.php'),
         ]);
-        \Blade::directive('imagine', function($argument) {
+        /*\Blade::directive('imagine', function($argument) {
             list($rule, $expression) = explode(',', trim($argument, '()'));
             $url = route('cache.imagine', [trim($rule), '']);
             return "<?php echo '$url'.$expression?>";
-        });
+        });*/
     }
 
     /**
@@ -31,6 +31,9 @@ class ImagineServiceProvider extends ServiceProvider
     public function register()
     {
         $dir = config('imagine.directory');
+        app()->bind('imagine', function() use ($dir){
+            return new Imagine($dir);
+        });
         \Route::get('/'.$dir.'/{rule}/{image}', [
             'uses' => 'Androzd\Imagine\ImagineController@index',
             'as' => 'cache.imagine',
