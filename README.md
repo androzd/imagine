@@ -39,12 +39,12 @@ php artisan vendor:publish --provider="Androzd\Imagine\ImagineServiceProvider"
 ```php
 
 // compress image by rules
-Imagine::path('rule_name', 'path to image in public directory']);
+Imagine::path('rule_name', 'path to image in public directory');
 ```
 
 Example:
 ```php
-Imagine::path('profile_image', '/uploads/original/avatar/1.jpg']);
+Imagine::path('profile_image', '/uploads/original/avatar/1.jpg');
 ```
 
 This example makes path: /cache/profile_image/uploads/original/avatar/1.jpg
