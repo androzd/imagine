@@ -12,6 +12,7 @@ namespace Androzd\Imagine;
 class Imagine
 {
     private $dir = 'cache';
+
     public function __construct($dir = '')
     {
         if ($dir) {
@@ -19,7 +20,8 @@ class Imagine
         }
     }
 
-    public function path($rule, $image) {
+    public function path($rule, $image)
+    {
         $image = trim($image, '/');
         return route('cache.imagine', [$rule, $image]);
     }

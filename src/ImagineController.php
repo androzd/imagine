@@ -27,13 +27,14 @@ class ImagineController extends Controller
             \File::makeDirectory($dir, 0777, true);
         }
         $image = \Image::make(public_path($file));
-        foreach ($config as $key => $value) {
-            if (!is_array($value)) {
-                $value = [$value];
-            }
-            $image = call_user_func_array([$image, $key], $value);
-        }
+        $imagine = new ImagineProcess($image);
+        $imagine->call($config);
+
+        /**/
+        return $image->response();
+        /*/
         return $image->save($route)->response();
+        /**/
     }
 
 }
