@@ -17,7 +17,7 @@ Intervention\Image\ImageServiceProvider::class,
 Androzd\Imagine\ImagineServiceProvider::class,
 ```
 
-And finally add these to the aliases array (note: Image must be listed before BootstrapForm):
+And finally add these to the aliases array (note: Image must be listed before Imagine):
 
 ```php
 'Image'   => Intervention\Image\Facades\Image::class,
