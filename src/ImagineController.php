@@ -30,11 +30,7 @@ class ImagineController extends Controller
         $imagine = new ImagineProcess($image);
         $imagine->call($config);
 
-        /**/
-        return $image->response();
-        /*/
         return $image->save($route)->response();
-        /**/
     }
 
 }
